@@ -1,0 +1,74 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="tittle"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTittle()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Portfolies List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let portfolio of portfolios; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivePortfolio(portfolio, i)"
+        >
+          {{ portfolio.tittle == '' || portfolio.tittle == null ? 'Default title' : portfolio.tittle}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentPortfolio">
+        <h4>Portfolio Details</h4>
+        <img [src]="currentPortfolio.imageUrl" class="img-thumbnail" width="30%" height="30%">
+        <div>
+          <label>{{ currentPortfolio.names + ' ' + currentPortfolio.lastNames}}</label>
+        </div>
+        <div>
+          <label><strong>Experience Summary</strong></label>
+          <p>{{ currentPortfolio.experienceSummary }}</p>
+        </div>
+        <a class="badge badge-warning" href="/portfolios/{{ currentPortfolio.idPortfolio }}">
+          Edit
+        </a>
+      </div>
+      <div *ngIf="!currentPortfolio">
+        <br />
+        <p>Please click on a Portfolio...</p>
+      </div>
+      <br />
+      <h5 *ngIf="tweets"><strong>Tweets Timeline</strong></h5>
+      <div class="list-group" *ngIf="tweets">
+        <div *ngFor="let tweet of tweets">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" onclick="return false;">
+            <div class="image-parent">
+              <img [src]="tweet.profileImageUrl" class="img-thumbnail" >
+            </div>
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ tweet.fullName }}</h5>
+            </div>
+            <p class="mb-1">{{ tweet.content }}</p>
+            <small>{{ tweet.userName }}</small>
+          </a>
+        </div>
+      </div>
+      <div *ngIf="!tweets && currentPortfolio">
+        <br />
+        <p>User account Twitter not found...</p>
+      </div>
+    </div>
+  </div>

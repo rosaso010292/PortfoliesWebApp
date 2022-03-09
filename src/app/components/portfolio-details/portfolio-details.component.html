@@ -1,0 +1,227 @@
+<div *ngIf="currentPortfolio" class="edit-form">
+    <h4>Portfolio</h4>
+    <form>
+        <div class="form-group">
+            <label for="description"><span style="color:red;">*</span>Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              [(ngModel)]="currentPortfolio.description"
+              name="description"
+              required
+              maxlength="255"
+              [formControl]="descriptionFc"
+            />
+            <small *ngIf="descriptionFc.invalid" class="text-danger">Description is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="experienceSummary"><span style="color:red;">*</span>Experience Summary</label>
+            <input
+              type="text"
+              class="form-control"
+              id="experienceSummary"
+              [(ngModel)]="currentPortfolio.experienceSummary"
+              required
+              maxlength="255"
+              name="experienceSummary"
+              [formControl]="experienceSummaryFc"
+            />
+            <small *ngIf="experienceSummaryFc.invalid" class="text-danger">Experience Summary is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              [(ngModel)]="currentPortfolio.id"
+              (keypress)="numberOnly($event)"
+              name="id"
+            />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl"><span style="color:red;">*</span>Image Url</label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              id="imageUrl"
+              [(ngModel)]="currentPortfolio.imageUrl"
+              [formControl]="imageUrlFc"
+              name="imageUrl"
+            />
+            <small *ngIf="imageUrlFc.invalid" class="text-danger">Image Url is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="lastNames"><span style="color:red;">*</span>Last Names</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastNames"
+              required
+              [(ngModel)]="currentPortfolio.lastNames"
+              [formControl]="lastNamesFc"
+              name="lastNames"
+            />
+            <small *ngIf="lastNamesFc.invalid" class="text-danger">Last Names is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="names"><span style="color:red;">*</span>Names</label>
+            <input
+              type="text"
+              class="form-control"
+              id="names"
+              required
+              [(ngModel)]="currentPortfolio.names"
+              [formControl]="namesFc"
+              name="names"
+            />
+            <small *ngIf="namesFc.invalid" class="text-danger">Names is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="tittle"><span style="color:red;">*</span>Tittle</label>
+            <input
+              type="text"
+              class="form-control"
+              id="tittle"
+              required
+              [(ngModel)]="currentPortfolio.tittle"
+              [formControl]="tittleFc"
+              name="tittle"
+            />
+            <small *ngIf="tittleFc.invalid" class="text-danger">Tittle is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="twitterUserId">Twitter User Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="twitterUserId"
+              [(ngModel)]="currentPortfolio.twitterUserId"
+              (keypress)="numberOnly($event)"
+              name="twitterUserId"
+            />
+          </div>
+          <div class="form-group">
+            <label for="twitterUserName"><span style="color:red;">*</span>Twitter User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="twitterUserName"
+              required
+              [(ngModel)]="currentPortfolio.twitterUserName"
+              [formControl]="twitterUserNameFc"
+              name="twitterUserName"
+            />
+            <small *ngIf="twitterUserNameFc.invalid" class="text-danger">Twitter User Name is requiered</small>
+          </div>
+          <div class="form-group">
+            <label for="userId">User Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userId"
+              [(ngModel)]="currentPortfolio.userId"
+              (keypress)="numberOnly($event)"
+              name="userId"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              [(ngModel)]="currentPortfolio.address"
+              name="address"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              [(ngModel)]="currentPortfolio.email"
+              name="email"
+            />
+            <small *ngIf="!emailValid" class="text-danger">Email is Invalid</small>
+          </div>
+          <div class="form-group">
+            <label for="experience">Experience</label>
+            <input
+              type="text"
+              class="form-control"
+              id="experience"
+              [(ngModel)]="currentPortfolio.experience"
+              name="experience"
+            />
+          </div>
+          <div class="form-group">
+            <label for="imagePath">Image Path</label>
+            <input
+              type="text"
+              class="form-control"
+              id="imagePath"
+              [(ngModel)]="currentPortfolio.imagePath"
+              name="imagePath"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="currentPortfolio.name"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              [(ngModel)]="currentPortfolio.phone"
+              maxlength="10"
+              (keypress)="numberOnly($event)"
+              name="phone"
+            />
+            <small *ngIf="!phoneValid" class="text-danger">Phone is Minimum Length 10</small>
+          </div>
+          <div class="form-group">
+            <label for="twitterUser">Twitter User</label>
+            <input
+              type="text"
+              class="form-control"
+              id="twitterUser"
+              [(ngModel)]="currentPortfolio.twitterUser"
+              name="twitterUser"
+            />
+          </div>
+          <div class="form-group">
+            <label for="zipCode">Zip Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="zipCode"
+              [(ngModel)]="currentPortfolio.zipCode"
+              maxlength="5"
+              (keypress)="numberOnly($event)"
+              name="zipCode"
+            />
+            <small *ngIf="!zipCodeValid" class="text-danger">Zip Code is Minimum Length 5</small>
+          </div>
+    </form>
+    <button type="submit" class="badge badge-success" (click)="updatePortfolio()">
+      Update
+    </button>
+    <br />
+    <h4>{{ message }}</h4>
+  </div>
+  <div *ngIf="!currentPortfolio">
+    <br />
+    <p>Cannot access this Portfolio...</p>
+  </div>
