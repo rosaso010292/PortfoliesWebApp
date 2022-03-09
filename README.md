@@ -1,27 +1,65 @@
-# PortfolioAppV1
+<p align="center">
+  <h1>Portfolies Web App</h1>
+</p>
+<br />
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+## About the Proyect
 
-## Development server
+This Web App is used to admin the porfolies information of Zemoga.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/15036089/157523545-552658dd-6b9e-400c-952b-827a8dfb6be9.png)
 
-## Code scaffolding
+## Get started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+* Note JS 12.11 - [Download and Install](https://nodejs.org/en/download/releases/)
+* Angular CLI 8.3.25 - Download and Install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install -g @angular/cli@8.3.25
+```
 
-## Running unit tests
+* [Run Portfolies Rest Api](https://github.com/rosaso010292/PortfoliesRestApi/blob/master/README.md)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Clone the repo
 
-## Running end-to-end tests
+```shell
+git clone https://github.com/rosaso010292/PortfoliesWebApp.git
+cd PortfoliesWebApp
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Install npm packages
 
-## Further help
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```shell
+npm install
+npm start
+```
+
+The `npm start` command builds (compiles TypeScript and copies assets) the application into `dist/`, watches for changes to the source files, and runs on http://localhost:4200
+
+Shut it down manually with `Ctrl-C`.
+
+## Built With
+
+* [Angular CLI 8.3.29](https://angular.io/)
+* [Bootstrap 4.6.1](https://getbootstrap.com)
+* [Node JS 12.11](https://nodejs.org/en/)
+
+## Demo
+
+**Note:** To be able to use the demo you must [Run Portfolies Rest Api](https://github.com/rosaso010292/PortfoliesRestApi/blob/master/README.md)
+
+Click here to start app demo: <a href="https://rosaso010292.github.io/PortfoliesWebApp/">DEMO PORTFOLIES WEB APP</a>
+
+## Creators
+
+**Omar Rosas**
+
+- <https://github.com/rosaso010292>
+
+## Total Hours Worked
+
+8 hours
